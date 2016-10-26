@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>App</title>
+
+	<!-- For Angular Routing -->
+	<base href="/">
+
+	<link rel="icon" href="assets/images/favicon.png">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Vendor CSS -->
+  <link rel="stylesheet" type="text/css" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="vendors/ng-notify/dist/ng-notify.min.css">
+  <link rel="stylesheet" type="text/css" href="vendors/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="vendors/ng-img-crop/compile/minified/ng-img-crop.css">
+	
+  <!-- Assets CSS-->
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+</head>
+<body ng-app="App">
+  <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">Connections</a></li>
+            <li role="presentation"><a href="#">MongoDB</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">RDBMS to Mongo</h3>
+      </div>
+
+      <div ng-view></div>
+
+      <footer class="footer">
+        <p>© 2016 Company, Inc.</p>
+      </footer>
+
+    </div>
+
+  <!-- <div class="loading" ng-show="loading"> Cargando ... </div>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="assets/images/logo.png" width="200px">  </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li class="active"><a href="patients"> <i class="fa fa-users" aria-hidden="true"></i> Pacientes <span class="sr-only">(current)</span></a></li>
+          <li class="disabled"><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> Analitico</a></li>
+          <li class="disabled"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> Agenda</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      	<div ng-view></div>
+      </div>
+    </div>
+  </div>-->
+
+  	<!-- Vendor JS -->
+	<script type="text/javascript" src="vendors/angular/angular.js"></script>
+	<script type="text/javascript" src="vendors/angular-route/angular-route.js"></script>
+
+	<!-- App JS-->
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/app.routes.js"></script>
+
+	<!-- Controllers -->
+	<script type="text/javascript" src="app/controllers/home.js"></script>
+
+	<!-- Factories -->
+	<!-- <script type="text/javascript" src="app/factories/patients.js"></script> -->
+
+  <!-- Filters -->
+  <!-- <script type="text/javascript" src="app/filters/patients.js"></script> -->
+
+  <!-- Services -->
+  <!--  <script type="text/javascript" src="app/services/loadingInterceptor.js"></script> -->
+
+  <!-- Directives -->
+  <!-- <script type="text/javascript" src="app/directives/datepicker.js"></script> -->
+
+</body>
