@@ -11,6 +11,20 @@ function config ($routeProvider, $locationProvider, $httpProvider) {
         	controller: 'HomeCtrl',
         	controllerAs: ''
       	})
+        .when('/connections/new', {
+          templateUrl: 'app/views/connections/new.html',
+          controller: 'ConnectionNewCtrl',
+          controllerAs: ''
+        }).when('/connections', {
+          templateUrl: 'app/views/connections/index.html',
+          controller: 'ConnectionIndexCtrl',
+          controllerAs: ''
+        })
+        .when('/migration', {
+          templateUrl: 'app/views/migration/index.html',
+          controller: 'MigrationIndexCtrl',
+          controllerAs: ''
+        })
       	.otherwise({
         	redirectTo: '/'
       	});

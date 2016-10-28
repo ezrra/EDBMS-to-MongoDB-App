@@ -4,9 +4,11 @@ var	express 	= require('express'),
 	morgan 		= require('morgan'),
 	config		= require('./config'),
 	path 		= require('path'),
-	mongodb 	= require('mongodb').MongoClient,
+	// mongodb 	= require('mongodb').MongoClient,
+    mongoose    = require('mongoose'),
 	PORT 		= 3000,
-	sql 		= require('mssql');
+	sql 		= require('mssql'),
+    mysql       = require('mysql');
 
 
 app.set('port', PORT || config.port);
@@ -21,36 +23,32 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 
-app.get('/*', function(req, res) {
+require('./app/models/connection');
 
-  	res.sendFile(__dirname + '/public/index.html');
-});
+var connections = require('./app/routes/connections')(app, express);
+var test        = require('./app/routes/test')(app, express);
 
-// use body parser so we can grab information from POST requests
-/*
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json({type: 'application/vnd.api+json'}));
-// app.use(morgan('dev'));
-
-// mongoose.connect(config.database);
-
-app.use(express.static(path.join(__dirname + '/public')));
-
-var router = require('./app/routes/api')(app, express, db);
-
-app.use('/api', router);
+app.use('/api', connections);
+app.use('/api', test);
 
 app.get('/*', function(req, res) {
 
   	res.sendFile(__dirname + '/public/index.html');
 });
 
-var db;*/
+mongoose.connect(config.database, function (err) {
 
-app.listen(config.port, function () {
-	
-	console.log('Running ... ' + config.port);
+    if (err) {
+
+        console.log('Database error.' + err)
+
+        throw err;
+    }
+
+    app.listen(config.port, function () {
+    
+        console.log('Running ... ' + config.port);
+    });
 });
 
 var configSQL = {
@@ -64,24 +62,43 @@ var configSQL = {
     }
 }
 
-/* sql.connect("mssql://test_user:password@ISRAEL-MONGODB\\SQL2014/test", function (err, database) {
+// test mysql
 
-	if (err) {
-		console.log(err);
-		process.exit(1);
-	}
+/* var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : 'password',
+  database : ''
+});
 
-	db = database;
+connection.connect(function(err) {
+    if (err) {
+        console.error('error connecting: ' + err.stack);
+        return;
+    }
 
-	console.log('Database connection ready');
+  // console.log('connected as id ' + connection.threadId);
 
+    connection.query('show databases;', function (error, results, fields) {
+
+        console.log(results)
+
+        if (error) {
+            console.log(error)
+        }
+  // error will be an Error if one occurred during the query
+  // results will contain the results of the query
+  // fields will contain information about the returned results fields (if any)
+    });
+
+    connection.end();
 }); */
 
 
 
 // Test mssql
 
-sql.connect(configSQL).then(function() {
+/* sql.connect(configSQL).then(function() {
     // Query
 
     new sql.Request().query('select * from Users').then(function(recordset) {
@@ -96,4 +113,4 @@ sql.connect(configSQL).then(function() {
 }).catch(function(err) {
 	console.log(err)
     // ... connect error checks
-});
+}); */

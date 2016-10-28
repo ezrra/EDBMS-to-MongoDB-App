@@ -18,6 +18,10 @@ body {
   padding-bottom: 20px;
 }
 
+a {
+  color: #2980b9;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -90,4 +94,18 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+/**/
+
+.label-mongodb {
+  background-color: #7fc857;
+}
+
+.label-mysql {
+  background-color: #005e88;
+}
+
+.label-sql {
+  background-color: #ba171d;
 }

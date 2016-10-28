@@ -1,0 +1,12 @@
+<h3>
+	Migration
+</h3>
+<hr>
+<h4>Select a connection</h4>
+<label>
+	Connection
+</label>
+
+<select ng-model="connection" class="form-control" ng-change="selectConnection(connection)">
+   <option ng-repeat="connection in connections" value="{{ connection._id }}"> {{ connection.name }} </option>
+</select>

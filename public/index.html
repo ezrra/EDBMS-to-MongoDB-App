@@ -31,8 +31,9 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">Connections</a></li>
+            <li role="presentation"><a href="/">Home</a></li>
+            <li role="presentation"><a href="connections">Connections</a></li>
+            <li role="presentation"><a href="migration">Migration</a></li>
             <li role="presentation"><a href="#">MongoDB</a></li>
           </ul>
         </nav>
@@ -82,16 +83,21 @@
   	<!-- Vendor JS -->
 	<script type="text/javascript" src="vendors/angular/angular.js"></script>
 	<script type="text/javascript" src="vendors/angular-route/angular-route.js"></script>
-
+  <script type="text/javascript" src="vendors/angular-resource/angular-resource.min.js"></script>
 	<!-- App JS-->
 	<script type="text/javascript" src="app/app.js"></script>
 	<script type="text/javascript" src="app/app.routes.js"></script>
 
 	<!-- Controllers -->
 	<script type="text/javascript" src="app/controllers/home.js"></script>
+  <script type="text/javascript" src="app/controllers/connections/index.js"></script>
+  <script type="text/javascript" src="app/controllers/connections/new.js"></script>
+  <script type="text/javascript" src="app/controllers/connections/edit.js"></script>
+
+  <script type="text/javascript" src="app/controllers/migration/index.js"></script>
 
 	<!-- Factories -->
-	<!-- <script type="text/javascript" src="app/factories/patients.js"></script> -->
+	<script type="text/javascript" src="app/factories/connections.js"></script>
 
   <!-- Filters -->
   <!-- <script type="text/javascript" src="app/filters/patients.js"></script> -->

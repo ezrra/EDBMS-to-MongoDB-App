@@ -1,0 +1,51 @@
+<h3>Connections</h3>
+<a href="connections/new">New</a>
+<hr>
+<table class="table">
+	<thead>
+		<tr>
+			<th class="col-md-3">
+				Name
+			</th>
+			<th class="col-md-3">
+				Type
+			</th>
+			<th class="col-md-2">Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="connection in connections">
+			<td>
+				<a href="connection/{{ patient._id }}/">
+					{{ connection.name }}
+				</a>
+			</td>
+			<td>
+				{{ connection.type }}
+			</td>
+			<td></td>
+			<!-- <td>
+				<a href="patients/{{ patient._id }}/medical-history">Ver detalles</a>
+				<div class="btn-group" uib-dropdown is-open="status.isopen">
+					<a id="single-button" type="button" class="btn btn-sm btn-border mrl5" uib-dropdown-toggle ng-disabled="disabled"><span class="caret"></span></a>
+				    <ul class="dropdown-menu dropdown-menu-130" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+				        <li role="menuitem">
+				        	<a class-value="pointer" new-consultation patient-id="patient._id"></a>
+				        </li>
+				        <li role="menuitem">
+				        	<a href="patients/{{ patient._id }}/edit" class="">
+								<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar paciente
+							</a>
+				        </li>
+				        <li role="menuitem">
+				        	<a class=""><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar paciente</a>
+				        </li>
+				   	</ul>
+			    </div>
+			</td> -->
+		</tr>
+	</tbody>
+</table>
+<div data-ng-if="!connections.length">
+	No records yet.
+</div>

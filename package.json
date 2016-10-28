@@ -6,7 +6,9 @@
     "body-parser": "~1.15.1",
     "express": "~4.13.4",
     "mongodb": "^2.2.9",
+    "mongoose": "^4.4.6",
     "morgan": "~1.7.0",
-    "mssql": "^3.3.0"
+    "mssql": "^3.3.0",
+    "mysql": "^2.11.1"
   }
 }
