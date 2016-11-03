@@ -1,19 +1,19 @@
 <div class="form-group">
-	<label>Name</label>
-	<input type="text" ng-model="connection.name" name="" class="form-control">
+	<label>Name</label> <span class="important">*</span>
+	<input type="text" ng-model="connection.name" name="" placeholder="Test Local" class="form-control" required>
 </div>
 
 <div class="form-group">
-	<label>Type</label>
-	<select class="form-control" ng-init="connection.type='mysql'" ng-model="connection.type">
+	<label>Type</label> <span class="important">*</span>
+	<select class="form-control" ng-init="connection.type='mysql'" ng-model="connection.type" required>
     	<option value="mysql">MySQL</option>
     	<option value="sql">SQL</option>
     </select>
 </div>
 
 <div class="form-group">
-	<label>host</label>
-	<input type="text" ng-model="connection.host" name="" class="form-control">
+	<label>host</label> <span class="important">*</span>
+	<input type="text" ng-model="connection.host" name="" class="form-control" required>
 </div>
 
 <div class="form-group">

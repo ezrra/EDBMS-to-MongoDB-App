@@ -2,7 +2,8 @@ var app = angular
 	.module('App', [
 	'app.routes',
 	'ngResource',
-	'ngRoute'
+	'ngRoute',
+	'ngNotify'
 	// 'ui.router'
 ]);
 

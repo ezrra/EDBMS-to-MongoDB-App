@@ -109,3 +109,7 @@ a {
 .label-sql {
   background-color: #ba171d;
 }
+
+.important {
+  color: red;
+}
