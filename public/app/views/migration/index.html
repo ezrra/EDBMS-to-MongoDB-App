@@ -2,11 +2,24 @@
 	Migration
 </h3>
 <hr>
-<h4>Select a connection</h4>
-<label>
-	Connection
-</label>
+<div class="form-group">
+	<label>
+		Connection
+	</label>
+	<select ng-model="connection" class="form-control" ng-change="selectConnection(connection)">
+	   <option ng-repeat="connection in connections" value="{{ connection._id }}"> {{ connection.name }} </option>
+	</select>
+	<input type="hidden" ng-model="connection_id" name="">
+</div>
 
-<select ng-model="connection" class="form-control" ng-change="selectConnection(connection)">
-   <option ng-repeat="connection in connections" value="{{ connection._id }}"> {{ connection.name }} </option>
-</select>
+<div class="form-group">
+	<label>Databases</label>
+	<select name="" class="form-control" ng-model="database" ng-change="selectDatabase(database)">
+	  	<option ng-repeat="database in databases" value="{{database.Database}}">{{database.Database}}</option>
+	</select>
+</div>
+
+<h3>Schemas to migrate</h3>
+<div class="well">
+	<h4>Tables or schema</h4>	
+</div>

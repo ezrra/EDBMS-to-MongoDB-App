@@ -9,12 +9,15 @@ exports.valid = function (req, res) {
 	var conn = {
 		host: req.body.host,
 		username: req.body.username,
-		password: req.body.password
+		password: req.body.password,
+		database: ""
 	};
 
 	connection.mysql(conn, function (response) {
 
-		res.json(response);
+		response.connection.end();
+
+		res.json({ success: response.success, msg: response.msg });
 	});
 
 	// console.log(req)

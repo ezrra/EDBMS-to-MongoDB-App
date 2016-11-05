@@ -6,14 +6,15 @@ exports.mysql = function (conn, callback) {
 	  	host: conn.host,
 	  	user: conn.username,
 	  	password: conn.password,
-	  	database: ''
+	  	database: conn.database || ""
 	});
 
 	return connection.connect(function(err) {
 
 		var response = {
 			msg: "Success connection",
-			success: true
+			success: true,
+			connection: connection
 		}
 
 	  	if (err) {
@@ -22,7 +23,7 @@ exports.mysql = function (conn, callback) {
 	    	response.success = false;
 	  	}
 
-	  	connection.end();
+	  	// connection.end();
 
 	  	callback(response)
 	});

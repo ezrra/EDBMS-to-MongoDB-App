@@ -1,5 +1,5 @@
 <h3>Connections</h3>
-<a href="connections/new">New</a>
+<a href="connections/new" class="btn btn-success">New</a>
 <hr>
 <table class="table">
 	<thead>
@@ -16,14 +16,14 @@
 	<tbody>
 		<tr ng-repeat="connection in connections">
 			<td>
-				<a href="connection/{{ patient._id }}/">
-					{{ connection.name }}
-				</a>
+				{{ connection.name }}
 			</td>
 			<td>
 				{{ connection.type }}
 			</td>
-			<td></td>
+			<td>
+				<a href="#" class="btn btn-primary">Edit</a>
+			</td>
 			<!-- <td>
 				<a href="patients/{{ patient._id }}/medical-history">Ver detalles</a>
 				<div class="btn-group" uib-dropdown is-open="status.isopen">

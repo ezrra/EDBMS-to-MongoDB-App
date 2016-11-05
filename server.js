@@ -10,6 +10,7 @@ var	express 	= require('express'),
 	sql 		= require('mssql'),
     mysql       = require('mysql');
 
+// https://www.thepolyglotdeveloper.com/2015/12/waiting-for-a-loop-of-async-functions-to-finish-in-node-js/
 
 app.set('port', PORT || config.port);
 
@@ -27,9 +28,11 @@ require('./app/models/connection');
 
 var connections = require('./app/routes/connections')(app, express);
 var test        = require('./app/routes/test')(app, express);
+var migration = require('./app/routes/migrations')(app, express);
 
 app.use('/api', connections);
 app.use('/api', test);
+app.use('/api', migration);
 
 app.get('/*', function(req, res) {
 
