@@ -4,13 +4,10 @@ var	express 	= require('express'),
 	morgan 		= require('morgan'),
 	config		= require('./config'),
 	path 		= require('path'),
-	// mongodb 	= require('mongodb').MongoClient,
     mongoose    = require('mongoose'),
 	PORT 		= 3000,
-	sql 		= require('mssql'),
+	sql 		= require('mssql'),RDBMS
     mysql       = require('mysql');
-
-// https://www.thepolyglotdeveloper.com/2015/12/waiting-for-a-loop-of-async-functions-to-finish-in-node-js/
 
 app.set('port', PORT || config.port);
 
@@ -53,67 +50,3 @@ mongoose.connect(config.database, function (err) {
         console.log('Running ... ' + config.port);
     });
 });
-
-var configSQL = {
-    user: 'test',
-    password: 'arkus@000',
-    server: "localhost\\SQL2014", // You can use 'localhost\\instance' to connect to named instance
-    database: 'test' ,
-    options: {
-        encrypt: true // Use this if you're on Windows Azure
-        // , instanceName: 'SQL2014'
-    }
-}
-
-// test mysql
-
-/* var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'password',
-  database : ''
-});
-
-connection.connect(function(err) {
-    if (err) {
-        console.error('error connecting: ' + err.stack);
-        return;
-    }
-
-  // console.log('connected as id ' + connection.threadId);
-
-    connection.query('show databases;', function (error, results, fields) {
-
-        console.log(results)
-
-        if (error) {
-            console.log(error)
-        }
-  // error will be an Error if one occurred during the query
-  // results will contain the results of the query
-  // fields will contain information about the returned results fields (if any)
-    });
-
-    connection.end();
-}); */
-
-
-
-// Test mssql
-
-/* sql.connect(configSQL).then(function() {
-    // Query
-
-    new sql.Request().query('select * from Users').then(function(recordset) {
-        console.dir(recordset);
-        
-    }).catch(function(err) {
-    	console.log(err)
-        // ... query error checks
-    });
-    
-   
-}).catch(function(err) {
-	console.log(err)
-    // ... connect error checks
-}); */
