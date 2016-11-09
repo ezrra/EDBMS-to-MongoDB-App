@@ -6,7 +6,7 @@ var	express 	= require('express'),
 	path 		= require('path'),
     mongoose    = require('mongoose'),
 	PORT 		= 3000,
-	sql 		= require('mssql'),RDBMS
+	sql 		= require('mssql'),
     mysql       = require('mysql');
 
 app.set('port', PORT || config.port);
